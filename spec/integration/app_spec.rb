@@ -9,16 +9,17 @@ describe Application do
   context "GET /hello" do
     it 'contains a h1 title' do
       response = get('/hello')
-      expect(response.body).to include('<h1>Hello!</h1>')
+      expect(response.body).to include('<h1>Hello !</h1>')
     end
   end
 
-#   context 'GET /hello' do
-#     it 'should return Hello Leo' do
-#       response = get('/hello?name=Leo')
-#       expect(response.status).to eq 200
-#       expect(response.body).to eq 'Hello Leo'
-#     end
+  context 'GET /hello' do
+    it 'should return Hello Leo' do
+      response = get('/hello?name=Leo')
+      expect(response.status).to eq 200
+      expect(response.body).to include '<h1>Hello Leo!</h1>'
+    end
+  end
 
 #     it 'should return hello josh' do
 #       response = get('/hello?name=Josh')
